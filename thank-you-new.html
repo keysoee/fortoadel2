@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terima Kasih - Adelia Citra Utami</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+            padding: 2rem;
+        }
+        
+        .thank-you-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1);
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .thank-you-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .thank-you-message {
+            font-size: 1.1rem;
+            color: #b8bcc8;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .message-status {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .status-text {
+            color: #ffd700;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-description {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-back {
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            color: #1a1f2e;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 10px 28px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary:hover {
+            background: #ffd700;
+            color: #1a1f2e;
+            transform: translateY(-2px);
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .social-links h4 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            color: #ffd700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: #ffd700;
+            color: #1a1f2e;
+            transform: translateY(-3px);
+        }
+        
+        .countdown {
+            margin-top: 1.5rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .thank-you-title {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-back, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="success-icon">✉️</div>
+            
+            <h1 class="thank-you-title">Pesan Terkirim!</h1>
+            
+            <p class="thank-you-message">
+                Terima kasih telah menghubungi saya! Pesan Anda telah berhasil dikirim dan akan segera saya baca.
+            </p>
+            
+            <div class="message-status">
+                <div class="status-text">
+                    <i class="fas fa-check-circle"></i> Status: Berhasil Dikirim
+                </div>
+                <div class="status-description">
+                    Pesan Anda telah dikirim ke adelia021203@gmail.com dan akan saya respon sesegera mungkin.
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                    Kembali ke Portfolio
+                </a>
+                <a href="index.html#contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Kirim Pesan Lain
+                </a>
+            </div>
+            
+            <div class="social-links">
+                <h4>Atau hubungi saya di:</h4>
+                <div class="social-icons">
+                    <a href="https://github.com/adeliactra" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/adelia-citra-utami-b942b230a" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/adeliactra/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:adelia021203@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="countdown">
+                <p>Otomatis kembali ke portfolio dalam <span id="countdown">10</span> detik...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown and auto redirect
+        let timeLeft = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+        
+        // Stop countdown if user interacts with page
+        document.addEventListener('click', () => {
+            clearInterval(countdown);
+            countdownElement.parentElement.style.display = 'none';
+        });
+        
+        // Add some confetti effect
+        function createConfetti() {
+            const colors = ['#ffd700', '#ffb347', '#ff6b6b'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.animation = 'fall 3s linear forwards';
+                    confetti.style.zIndex = '9999';
+                    
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+        
+        // Add falling animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Trigger confetti on page load
+        window.addEventListener('load', () => {
+            setTimeout(createConfetti, 500);
+        });
+    </script>
+</body>
+</html>

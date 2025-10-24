@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terima Kasih - Adelia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .thank-you-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .title {
+            color: #ffd700;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .message {
+            color: #b8bcc8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .status-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+        }
+        
+        .back-button {
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            color: #1a1f2e;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        .countdown {
+            margin-top: 1.5rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-card">
+        <div class="success-icon">✉️</div>
+        
+        <h1 class="title">Pesan Terkirim!</h1>
+        
+        <p class="message">
+            Terima kasih telah menghubungi saya! Pesan Anda telah berhasil dikirim dan akan segera saya baca.
+        </p>
+        
+        <div class="status-box">
+            ✅ Status: Berhasil dikirim ke adelia021203@gmail.com
+        </div>
+        
+        <a href="index.html" class="back-button">
+            Kembali ke Portfolio
+        </a>
+        
+        <div class="countdown">
+            <p>Otomatis kembali dalam <span id="countdown">8</span> detik...</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple countdown
+        let timeLeft = 8;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+        
+        // Stop countdown if user clicks
+        document.addEventListener('click', () => {
+            clearInterval(countdown);
+            document.querySelector('.countdown').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
